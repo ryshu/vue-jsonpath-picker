@@ -37,7 +37,7 @@ export default {
     },
     mounted() {
         // Render jpPicker
-        if (val) {
+        if (this.$refs['json-renderer']) {
             jsonPathPicker(this.$refs['json-renderer'], this.$props.code, [this.path]);
         }
     },
@@ -60,7 +60,6 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-@import '~jsonpath-picker-vanilla/lib/jsonpath-picker.min.css';
 
 .json-path-picker {
     padding: 3px 10px;

@@ -1,5 +1,7 @@
 import JSONPathPicker from "./JSONPathPicker.vue";
 
+import 'jsonpath-picker-vanilla/lib/jsonpath-picker.min.css';
+
 export default {
  install(Vue) {
   // Let's register our component globally

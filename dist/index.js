@@ -1,5 +1,5 @@
 /*!
- * vue-jsonpath-picker v1.0.2
+ * vue-jsonpath-picker v1.0.3
  * (c) Oscar Marie--Taillefer
  * Released under the MIT License.
  */
@@ -484,7 +484,7 @@ var script = {
   },
   mounted: function mounted() {
     // Render jpPicker
-    if (val) {
+    if (this.$refs['json-renderer']) {
       jsonpathPickerVanilla_1(this.$refs['json-renderer'], this.$props.code, [this.path]);
     }
   },
@@ -695,8 +695,8 @@ var __vue_staticRenderFns__ = [];
 
 var __vue_inject_styles__ = function __vue_inject_styles__(inject) {
   if (!inject) return;
-  inject("data-v-2f6c8a1a_0", {
-    source: ".json-path-picker[data-v-2f6c8a1a]{padding:3px 10px}",
+  inject("data-v-3c948855_0", {
+    source: ".json-path-picker[data-v-3c948855]{padding:3px 10px}",
     map: undefined,
     media: undefined
   });
@@ -704,7 +704,7 @@ var __vue_inject_styles__ = function __vue_inject_styles__(inject) {
 /* scoped */
 
 
-var __vue_scope_id__ = "data-v-2f6c8a1a";
+var __vue_scope_id__ = "data-v-3c948855";
 /* module identifier */
 
 var __vue_module_identifier__ = undefined;
@@ -717,6 +717,36 @@ var JSONPathPicker = normalizeComponent_1({
   render: __vue_render__,
   staticRenderFns: __vue_staticRenderFns__
 }, __vue_inject_styles__, __vue_script__, __vue_scope_id__, __vue_is_functional_template__, __vue_module_identifier__, browser, undefined);
+
+function styleInject(css, ref) {
+  if ( ref === void 0 ) ref = {};
+  var insertAt = ref.insertAt;
+
+  if (!css || typeof document === 'undefined') { return; }
+
+  var head = document.head || document.getElementsByTagName('head')[0];
+  var style = document.createElement('style');
+  style.type = 'text/css';
+
+  if (insertAt === 'top') {
+    if (head.firstChild) {
+      head.insertBefore(style, head.firstChild);
+    } else {
+      head.appendChild(style);
+    }
+  } else {
+    head.appendChild(style);
+  }
+
+  if (style.styleSheet) {
+    style.styleSheet.cssText = css;
+  } else {
+    style.appendChild(document.createTextNode(css));
+  }
+}
+
+var css = "ul.json-dict,ol.json-array{list-style-type:none;margin:0 0 0 1px;border-left:1px dotted #ccc;padding-left:2em}.json-string{color:#0b7500}.json-literal{color:#1a01cc;font-weight:bold}a.json-toggle{position:relative;color:inherit;text-decoration:none}a.json-toggle:focus{outline:0}a.json-toggle:before{color:#aaa;content:\"\\25BC\";position:absolute;display:inline-block;width:1em;left:-1em}a.json-toggle.collapsed:before{content:\"\\25B6\"}a.json-placeholder{color:#aaa;padding:0 1em;text-decoration:none}a.json-placeholder:hover{text-decoration:underline}.pick-path{color:lightgray;cursor:pointer;margin-left:3px}.pick-path:hover{color:darkgray}";
+styleInject(css);
 
 var index = {
   install: function install(Vue) {
