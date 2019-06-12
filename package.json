@@ -1,0 +1,35 @@
+{
+  "name": "vue-jsonpath-picker",
+  "version": "1.0.0",
+  "description": "Vue JSON Path picker",
+  "main": "./dist/index.min.js",
+  "scripts": {
+    "serve": "vue serve src/JSONPathPicker.vue",
+    "build": "bili --format cjs-min"
+  },
+  "keywords": [
+    "jsonpath",
+    "picker",
+    "jsonpath-picker",
+    "vue"
+  ],
+  "author": "Oscar Marie--Taillefer",
+  "license": "MIT",
+  "devDependencies": {
+    "@vue/cli": "^3.8.2",
+    "@vue/cli-service-global": "^3.8.0",
+    "bili": "^4.8.0",
+    "css-loader": "^3.0.0",
+    "node-sass": "^4.12.0",
+    "rollup-plugin-vue": "^5.0.0",
+    "sass-loader": "^7.1.0",
+    "style-loader": "^0.23.1",
+    "vue-template-compiler": "^2.6.10"
+  },
+  "dependencies": {
+    "jsonpath-picker-vanilla": "^1.1.0"
+  },
+  "files": [
+    "dist/*"
+  ]
+}
