@@ -1,3 +1,5 @@
+[![npm version](https://badge.fury.io/js/vue-jsonpath-picker.svg)](https://badge.fury.io/js/vue-jsonpath-picker)
+
 # Vue JSON Picker
 
 **Vue JSON Picker** is an adaptation of the [jsonpath-picker-vanilly](https://github.com/ryshu/vue-jsonpath-picker) lib.

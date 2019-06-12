@@ -37,18 +37,24 @@ export default {
     },
     mounted() {
         // Render jpPicker
-        jsonPathPicker(this.$refs['json-renderer'], this.$props.code, [this.path]);
+        if (val) {
+            jsonPathPicker(this.$refs['json-renderer'], this.$props.code, [this.path]);
+        }
     },
     watch: {
         code: function(val) {
-            clearJsonPathPicker(this.$refs['json-renderer']);
-            if (val) {
-                jsonPathPicker(this.$refs['json-renderer'], this.$props.code, [this.path]);
+            if (this.$refs['json-renderer']) {
+                clearJsonPathPicker(this.$refs['json-renderer']);
+                if (val) {
+                    jsonPathPicker(this.$refs['json-renderer'], this.$props.code, [this.path]);
+                }
             }
         }
     },
     destroyed() {
-        clearJsonPathPicker(this.$refs['json-renderer']);
+        if (this.$refs['json-renderer']) {
+            clearJsonPathPicker(this.$refs['json-renderer']);
+        }
     },
 }
 </script>

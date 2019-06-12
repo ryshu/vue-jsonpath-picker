@@ -1,6 +1,6 @@
 {
   "name": "vue-jsonpath-picker",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "Vue JSON Path picker",
   "main": "./dist/index.min.js",
   "scripts": {
@@ -27,7 +27,7 @@
     "vue-template-compiler": "^2.6.10"
   },
   "dependencies": {
-    "jsonpath-picker-vanilla": "^1.1.0"
+    "jsonpath-picker-vanilla": "^1.1.1"
   },
   "files": [
     "dist/*"
