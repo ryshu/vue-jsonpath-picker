@@ -1,11 +1,11 @@
 {
   "name": "vue-jsonpath-picker",
-  "version": "1.0.0",
+  "version": "1.0.2",
   "description": "Vue JSON Path picker",
   "main": "./dist/index.min.js",
   "scripts": {
     "serve": "vue serve src/JSONPathPicker.vue",
-    "build": "bili --format cjs-min"
+    "build": "bili --format cjs && bili --format cjs-min"
   },
   "keywords": [
     "jsonpath",

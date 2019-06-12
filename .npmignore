@@ -1,5 +1,10 @@
+# Modules
 node_modules
-src
 
+# SRC + unminified
+src
+dist/index.js
+
+# Config
 bili.config.js
 postcss.config.js
