@@ -16,8 +16,8 @@
   "author": "Oscar Marie--Taillefer",
   "license": "MIT",
   "devDependencies": {
-    "@vue/cli": "^3.8.2",
-    "@vue/cli-service-global": "^3.8.0",
+    "@vue/cli": "^3.8.4",
+    "@vue/cli-service-global": "^3.8.4",
     "bili": "^4.8.0",
     "css-loader": "^3.0.0",
     "node-sass": "^4.12.0",
@@ -27,7 +27,7 @@
     "vue-template-compiler": "^2.6.10"
   },
   "dependencies": {
-    "jsonpath-picker-vanilla": "^1.1.1"
+    "jsonpath-picker-vanilla": "^1.2.0"
   },
   "files": [
     "dist/*"

@@ -25,7 +25,8 @@ export default {
                     sample: "This is a sample"
                 }
             }
-        }
+        },
+        props: { opts: Object, default() { return {}; } }
     },
     methods: {
         pickPath(ev) {
@@ -38,7 +39,7 @@ export default {
     mounted() {
         // Render jpPicker
         if (this.$refs['json-renderer']) {
-            jsonPathPicker(this.$refs['json-renderer'], this.$props.code, [this.path]);
+            jsonPathPicker(this.$refs['json-renderer'], this.$props.code, [this.path], this.$props.opts);
         }
     },
     watch: {
@@ -46,7 +47,7 @@ export default {
             if (this.$refs['json-renderer']) {
                 clearJsonPathPicker(this.$refs['json-renderer']);
                 if (val) {
-                    jsonPathPicker(this.$refs['json-renderer'], this.$props.code, [this.path]);
+                    jsonPathPicker(this.$refs['json-renderer'], this.$props.code, [this.path], this.$props.opts);
                 }
             }
         }

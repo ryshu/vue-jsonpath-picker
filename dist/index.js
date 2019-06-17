@@ -1,5 +1,5 @@
 /*!
- * vue-jsonpath-picker v1.0.3
+ * vue-jsonpath-picker v1.0.4
  * (c) Oscar Marie--Taillefer
  * Released under the MIT License.
  */
@@ -21,7 +21,7 @@ function isCollapsable(arg) {
 
 
 function isUrl(string) {
-  var regexp = /^(ftp|http|https):\/\/(\w+:{0,1}\w*@)?(\S+)(:[0-9]+)?(\/|\/([\w#!:.?+=&%@!\-/]))?/;
+  var regexp = /^(ftp|http|https):\/\/(\w+:{0,1}\w*@)?(\S+)(:[0-9]+)?(\/|\/([\w#:.?+=&%@!\-/]))?/;
   return regexp.test(string);
 }
 /**
@@ -156,7 +156,7 @@ function siblings(el, sel, callback) {
   for (var i = 0; i < el.parentNode.children.length; i += 1) {
     var child = el.parentNode.children[i];
 
-    if (child !== el && (!sel || child.matches(sel))) {
+    if (child !== el && typeof sel === 'string' && child.matches(sel)) {
       sibs.push(child);
     }
   } // If a callback is passed, call it on each sibs
@@ -231,7 +231,7 @@ function getParents(elem, sel) {
   var result = [];
 
   for (var p = elem && elem.parentElement; p; p = p.parentElement) {
-    if (!sel || p.matches(sel)) {
+    if (typeof sel === 'string' && p.matches(sel)) {
       result.push(p);
     }
   }
@@ -371,7 +371,7 @@ function PickEventListener(event) {
 
   while (t && t !== this) {
     if (t.matches('.pick-path')) {
-      PickPathHandler.call(null, t, event);
+      PickPathHandler.call(null, t);
     }
 
     t = t.parentNode;
@@ -391,7 +391,7 @@ var options = {};
 function jsonPathPicker(source, json, target, opt) {
   options = opt || {};
 
-  if (!source instanceof Element) {
+  if (!(source instanceof Element)) {
     return 1;
   }
 
@@ -417,8 +417,16 @@ function jsonPathPicker(source, json, target, opt) {
 
   off('click', source);
   source.addEventListener('click', ToggleEventListener);
-  source.addEventListener('click', SimulateClickEventListener);
-  source.addEventListener('click', PickEventListener);
+  source.addEventListener('click', SimulateClickEventListener); // Bind picker only if user didn't diseable it
+
+  if (!options.WithoutPicker) {
+    source.addEventListener('click', PickEventListener);
+  } else {
+    // Remove every picker icon
+    document.querySelectorAll('.pick-path').forEach(function (el) {
+      return el.parentNode.removeChild(el);
+    });
+  }
 
   if (options.outputCollapsed === true) {
     // Trigger click to collapse all nodes
@@ -436,7 +444,7 @@ function jsonPathPicker(source, json, target, opt) {
 
 
 function clearJsonPathPicker(source) {
-  if (!source instanceof Element) {
+  if (!(source instanceof Element)) {
     return 1;
   } //Remove event listener
 
@@ -472,6 +480,12 @@ var script = {
           sample: "This is a sample"
         };
       }
+    },
+    props: {
+      opts: Object,
+      "default": function _default() {
+        return {};
+      }
     }
   },
   methods: {
@@ -485,7 +499,7 @@ var script = {
   mounted: function mounted() {
     // Render jpPicker
     if (this.$refs['json-renderer']) {
-      jsonpathPickerVanilla_1(this.$refs['json-renderer'], this.$props.code, [this.path]);
+      jsonpathPickerVanilla_1(this.$refs['json-renderer'], this.$props.code, [this.path], this.$props.opts);
     }
   },
   watch: {
@@ -494,7 +508,7 @@ var script = {
         jsonpathPickerVanilla_2(this.$refs['json-renderer']);
 
         if (val) {
-          jsonpathPickerVanilla_1(this.$refs['json-renderer'], this.$props.code, [this.path]);
+          jsonpathPickerVanilla_1(this.$refs['json-renderer'], this.$props.code, [this.path], this.$props.opts);
         }
       }
     }
@@ -695,8 +709,8 @@ var __vue_staticRenderFns__ = [];
 
 var __vue_inject_styles__ = function __vue_inject_styles__(inject) {
   if (!inject) return;
-  inject("data-v-3c948855_0", {
-    source: ".json-path-picker[data-v-3c948855]{padding:3px 10px}",
+  inject("data-v-04c8c339_0", {
+    source: ".json-path-picker[data-v-04c8c339]{padding:3px 10px}",
     map: undefined,
     media: undefined
   });
@@ -704,7 +718,7 @@ var __vue_inject_styles__ = function __vue_inject_styles__(inject) {
 /* scoped */
 
 
-var __vue_scope_id__ = "data-v-3c948855";
+var __vue_scope_id__ = "data-v-04c8c339";
 /* module identifier */
 
 var __vue_module_identifier__ = undefined;
