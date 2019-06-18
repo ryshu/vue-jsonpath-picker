@@ -1,5 +1,5 @@
 /*!
- * vue-jsonpath-picker v1.0.4
+ * vue-jsonpath-picker v1.1.1
  * (c) Oscar Marie--Taillefer
  * Released under the MIT License.
  */
@@ -481,11 +481,9 @@ var script = {
         };
       }
     },
-    props: {
-      opts: Object,
-      "default": function _default() {
-        return {};
-      }
+    opts: Object,
+    "default": function _default() {
+      return {};
     }
   },
   methods: {
@@ -709,8 +707,8 @@ var __vue_staticRenderFns__ = [];
 
 var __vue_inject_styles__ = function __vue_inject_styles__(inject) {
   if (!inject) return;
-  inject("data-v-04c8c339_0", {
-    source: ".json-path-picker[data-v-04c8c339]{padding:3px 10px}",
+  inject("data-v-ce718602_0", {
+    source: ".json-path-picker[data-v-ce718602]{padding:3px 10px}",
     map: undefined,
     media: undefined
   });
@@ -718,7 +716,7 @@ var __vue_inject_styles__ = function __vue_inject_styles__(inject) {
 /* scoped */
 
 
-var __vue_scope_id__ = "data-v-04c8c339";
+var __vue_scope_id__ = "data-v-ce718602";
 /* module identifier */
 
 var __vue_module_identifier__ = undefined;
