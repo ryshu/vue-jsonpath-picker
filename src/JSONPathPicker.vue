@@ -26,7 +26,7 @@ export default {
                 }
             }
         },
-        props: { opts: Object, default() { return {}; } }
+        opts: Object, default() { return {}; }
     },
     methods: {
         pickPath(ev) {
