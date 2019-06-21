@@ -27,7 +27,7 @@
     "vue-template-compiler": "^2.6.10"
   },
   "dependencies": {
-    "jsonpath-picker-vanilla": "^1.2.0"
+    "jsonpath-picker-vanilla": "^1.2.1"
   },
   "files": [
     "dist/*"
