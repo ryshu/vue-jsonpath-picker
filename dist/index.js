@@ -1,5 +1,5 @@
 /*!
- * vue-jsonpath-picker v1.1.3
+ * vue-jsonpath-picker v1.1.4
  * (c) Oscar Marie--Taillefer
  * Released under the MIT License.
  */
@@ -630,7 +630,7 @@ function createInjector(context) {
     return addStyle(id, style);
   };
 }
-var HEAD = document.head || document.getElementsByTagName('head')[0];
+var HEAD;
 var styles = {};
 
 function addStyle(id, css) {
@@ -656,6 +656,11 @@ function addStyle(id, css) {
       style.element = document.createElement('style');
       style.element.type = 'text/css';
       if (css.media) style.element.setAttribute('media', css.media);
+
+      if (HEAD === undefined) {
+        HEAD = document.head || document.getElementsByTagName('head')[0];
+      }
+
       HEAD.appendChild(style.element);
     }
 
@@ -728,8 +733,8 @@ var __vue_staticRenderFns__ = [];
 
 var __vue_inject_styles__ = function __vue_inject_styles__(inject) {
   if (!inject) return;
-  inject("data-v-ce718602_0", {
-    source: ".json-path-picker[data-v-ce718602]{padding:3px 10px}",
+  inject("data-v-07df53e9_0", {
+    source: ".json-path-picker[data-v-07df53e9]{padding:3px 10px}",
     map: undefined,
     media: undefined
   });
@@ -737,7 +742,7 @@ var __vue_inject_styles__ = function __vue_inject_styles__(inject) {
 /* scoped */
 
 
-var __vue_scope_id__ = "data-v-ce718602";
+var __vue_scope_id__ = "data-v-07df53e9";
 /* module identifier */
 
 var __vue_module_identifier__ = undefined;
