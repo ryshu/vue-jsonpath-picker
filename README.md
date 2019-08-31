@@ -35,7 +35,7 @@ Vue.use(JSONPathPicker);
 ## Usage
 
 ``` html
-<json-pathpicker :code="JSON Object" v-on:path="pathChangeHandler" />
+<jsonpath-picker :code="JSON Object" v-on:path="pathChangeHandler" />
 ```
 
 ## Options
@@ -43,7 +43,7 @@ Vue.use(JSONPathPicker);
 You can add options using basic lib options through option like following, see [documentation](https://github.com/ryshu/jsonpath-picker) for more detail;
 
 ``` html
-<json-pathpicker :code="JSON Object" v-on:path="pathChangeHandler" :opts="{ picker: false }" />
+<jsonpath-picker :code="JSON Object" v-on:path="pathChangeHandler" :opts="{ picker: false }" />
 ```
 
 ## Contributing
