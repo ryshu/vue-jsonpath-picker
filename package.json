@@ -24,7 +24,7 @@
     "rollup-plugin-vue": "^5.0.1",
     "sass-loader": "^8.0.0",
     "style-loader": "^1.0.0",
-    "vue-template-compiler": "^2.6.10"
+    "vue-template-compiler": "^2.6.11"
   },
   "dependencies": {
     "jsonpath-picker-vanilla": "^1.2.3"
