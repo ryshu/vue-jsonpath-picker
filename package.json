@@ -20,7 +20,7 @@
     "@vue/cli-service-global": "^3.9.2",
     "bili": "^4.8.0",
     "css-loader": "^3.0.0",
-    "node-sass": "^4.12.0",
+    "node-sass": "^7.0.0",
     "rollup-plugin-vue": "^5.0.1",
     "sass-loader": "^8.0.0",
     "style-loader": "^1.0.0",
