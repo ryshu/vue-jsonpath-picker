@@ -16,8 +16,8 @@
   "author": "Oscar Marie--Taillefer",
   "license": "MIT",
   "devDependencies": {
-    "@vue/cli": "^4.4",
-    "@vue/cli-service-global": "^3.9.2",
+    "@vue/cli": "^5.0.0",
+    "@vue/cli-service-global": "^4.0.0",
     "bili": "^5.0",
     "css-loader": "^6.7",
     "node-sass": "^7.0",
